@@ -1,0 +1,33 @@
+{
+  "name": "scroll-switch",
+  "version": "1.0.0",
+  "description": "简单来说，它就是用来滚动切换列表项的",
+  "keywords": [
+    "next",
+    "previous",
+    "pre",
+    "swiper",
+    "slider",
+    "carousel"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && rollup ./dist/index.js --file ./dist/index.js --format umd --name \"ScrollSwitch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aweiu/scroll-switch.git"
+  },
+  "author": "aweiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aweiu/scroll-switch/issues"
+  },
+  "homepage": "https://github.com/aweiu/scroll-switch#readme",
+  "devDependencies": {
+    "prettier": "^2.1.1",
+    "rollup": "^2.26.11",
+    "typescript": "^4.0.2"
+  }
+}
