@@ -2,13 +2,14 @@ export interface ScrollSwitchOptions {
   itemSelector: string;
   offset?: number;
   mode?: "vertical" | "horizontal";
+  behavior?: ScrollBehavior;
 }
 
 export default class ScrollSwitch {
   private options: ScrollSwitchOptions;
 
   constructor(options: ScrollSwitchOptions) {
-    this.options = options;
+    this.options = { behavior: "smooth", ...options };
   }
 
   private get edgeAttr() {
@@ -42,7 +43,7 @@ export default class ScrollSwitch {
 
     window.scrollTo({
       [edgeAttr]: edgeDistance,
-      behavior: "smooth",
+      behavior: this.options.behavior,
     });
   }
 
