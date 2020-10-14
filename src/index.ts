@@ -57,7 +57,9 @@ export default class ScrollSwitch {
         type === "pre"
           ? firstVisibleItem.index - 1
           : firstVisibleItem.index + 1;
-      const edgeDistance = Math.round(firstVisibleItem.rect[edgeAttr] + offset);
+      // 防止小数像素导致的某些边界无法切换
+      const int = firstVisibleItem.rect[edgeAttr] > 0 ? Math.ceil : Math.floor;
+      const edgeDistance = int(firstVisibleItem.rect[edgeAttr]) + offset;
       if (
         (type === "pre" && edgeDistance < 0) ||
         (type === "next" && edgeDistance > 0)
